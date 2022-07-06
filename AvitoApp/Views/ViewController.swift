@@ -22,19 +22,22 @@ struct Participants: Decodable {
 }
 
 
-class ViewController: UIViewController, UITableViewDelegate {
-    
-    let idCell = "idcell"
+class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+
+    let idCell = "idcell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: idCell)
         
         
         let urlString = "https://run.mocky.io/v3/1d1cb4ec-73db-4762-8c4b-0b8aa3cecd4c"
+        
         guard let url = URL (string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {return}
@@ -42,8 +45,8 @@ class ViewController: UIViewController, UITableViewDelegate {
             
             
             do {
-                let Company = try JSONDecoder().decode(Company.self, from: data)
-                print (Company)
+                self.сompany = try JSONDecoder().decode(Company.self, from: data).company
+                print (self?.сompany)
                 
             } catch let error {
                 print (error)
@@ -52,26 +55,24 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
 }
 
+//MARK: UITableViewDataSource&UITableViewDelegate
 
-extension ViewController:  UITableViewDataSource {
+extension ViewController:  UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return company?.employees?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: idCell)
-        if cell == nil {
-            cell = UITableViewCell (style: .subtitle, reuseIdentifier: idCell)
-            
-        }
+        var cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! CustomTableViewCell
         
-        cell!.textLabel?.text = "Main text"
-        cell!.detailTextLabel?.text = "Tap to show more"
         
-        return cell!
+        return cell
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return heighOfCell
     }
 }
+private let heighOfCell: CGFloat = 100

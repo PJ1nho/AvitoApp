@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E999C800287612F100A0D310 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999C7FE287612F100A0D310 /* CustomTableViewCell.swift */; };
+		E999C801287612F100A0D310 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E999C7FF287612F100A0D310 /* CustomTableViewCell.xib */; };
 		E9BCDE73286B589E00D4CBDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCDE72286B589E00D4CBDB /* AppDelegate.swift */; };
 		E9BCDE75286B589E00D4CBDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCDE74286B589E00D4CBDB /* SceneDelegate.swift */; };
 		E9BCDE77286B589E00D4CBDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCDE76286B589E00D4CBDB /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E999C7FE287612F100A0D310 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E999C7FF287612F100A0D310 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		E9BCDE6F286B589E00D4CBDB /* AvitoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BCDE72286B589E00D4CBDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9BCDE74286B589E00D4CBDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			children = (
 				E9BCDE78286B589E00D4CBDB /* Main.storyboard */,
 				E9BCDE76286B589E00D4CBDB /* ViewController.swift */,
+				E999C7FE287612F100A0D310 /* CustomTableViewCell.swift */,
+				E999C7FF287612F100A0D310 /* CustomTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 			files = (
 				E9BCDE7F286B589F00D4CBDB /* LaunchScreen.storyboard in Resources */,
 				E9BCDE7C286B589F00D4CBDB /* Assets.xcassets in Resources */,
+				E999C801287612F100A0D310 /* CustomTableViewCell.xib in Resources */,
 				E9BCDE7A286B589E00D4CBDB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +171,7 @@
 			files = (
 				E9BCDE77286B589E00D4CBDB /* ViewController.swift in Sources */,
 				E9BCDE73286B589E00D4CBDB /* AppDelegate.swift in Sources */,
+				E999C800287612F100A0D310 /* CustomTableViewCell.swift in Sources */,
 				E9BCDE75286B589E00D4CBDB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
