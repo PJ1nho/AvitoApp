@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     
 
     let idCell = "idcell"
+    var company: Company!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +46,9 @@ class ViewController: UIViewController {
             
             
             do {
-                self.сompany = try JSONDecoder().decode(Company.self, from: data).company
-                print (self?.сompany)
+                let companyJson = try JSONDecoder().decode(Company.self, from: data).CompanyJson.self
+                self.company = companyJson.self
+                print (self.сompany)
                 
             } catch let error {
                 print (error)
